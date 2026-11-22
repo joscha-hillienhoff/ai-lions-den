@@ -1,8 +1,4 @@
-"""Application configuration, read from environment variables.
-
-The variable names match the previous TypeScript implementation so existing
-deployments and rehearsal notes keep working.
-"""
+"""Application configuration, read from environment variables."""
 
 from __future__ import annotations
 

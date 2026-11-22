@@ -331,3 +331,5 @@ standalone project.
 ## License
 
 [MIT](LICENSE)
+
+Fonts: Inter and Fraunces, SIL Open Font License 1.1.

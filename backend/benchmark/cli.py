@@ -178,7 +178,7 @@ def main(argv: list[str] | None = None) -> int:
         print("error: --budget-usd must be finite and positive", file=sys.stderr)
         return 2
     if args.budget_usd >= 5:
-        print("error: --budget-usd must be under 5 USD", file=sys.stderr)
+        print("error: --budget-usd must be under 5 USD (the CLI's safety limit)", file=sys.stderr)
         return 2
 
     # Match the app: normal OPENAI_* settings can live in .env.

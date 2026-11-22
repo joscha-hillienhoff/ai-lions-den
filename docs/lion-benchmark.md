@@ -24,7 +24,7 @@ Before the first call it prints the expected calls and estimated token cost and 
 unless `--confirm` is present. The default hard cap is 4 USD. Spend is computed from the
 reported prompt and completion tokens after every call, and a call is refused before the
 estimated worst case could cross the cap. Actual usage is recorded, so a final in-flight
-request can exceed the cap by that request; the 4 USD default remains below the 5 USD limit.
+request can exceed the cap by that request; the 4 USD default remains below the CLI's own safety limit: it refuses budgets of 5 USD or more.
 
 Expected cost at list prices: about 0.86 USD with `gpt-4.1-mini` for the full 30
 sessions without retries. With `gpt-4.1` the full three repeats would cost about 4.32 USD
