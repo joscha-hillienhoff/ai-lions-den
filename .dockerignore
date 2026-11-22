@@ -1,0 +1,25 @@
+# Never send local configuration or secrets to the build.
+.env
+.env.*
+!.env.example
+
+# Local state and build output.
+data/
+*.db
+*.db-journal
+node_modules/
+out/
+.next/
+.venv/
+*.tsbuildinfo
+
+# Repository and development metadata.
+.git/
+.gitignore
+.github/
+docs/screenshots/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store

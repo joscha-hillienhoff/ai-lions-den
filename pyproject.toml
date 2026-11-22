@@ -1,0 +1,57 @@
+[project]
+name = "ai-lions-den"
+version = "0.1.0"
+description = "The AI Lion's Den - a live startup pitch game where teams face a jury of four AI investors"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "openai>=1.60",
+    "pydantic>=2.9",
+    "python-dotenv>=1.0",
+    "qrcode[pil]>=8.0",
+    "uvicorn[standard]>=0.32",
+]
+
+[project.scripts]
+ai-lions-den = "backend.main:run"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28",
+    "playwright>=1.65.0",
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["backend"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Long persona and prompt prose is data, not code; breaking it would change the text.
+"backend/jury/demo.py" = ["E501"]
+"backend/jury/prompts.py" = ["E501"]
+"backend/personas.py" = ["E501"]
+# E2E pitch and defense fixtures are content, not code.
+"scripts/e2e_demo.py" = ["E501"]
+# Layout fixtures and the browser probe are data; breaking them changes the text.
+"scripts/layout_harness.py" = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
