@@ -70,7 +70,7 @@ def _max_payload() -> dict[str, str]:
     return _max_pitch().model_dump(by_alias=True)
 
 
-def test_server_limits_are_the_agreed_values() -> None:
+def test_server_limits_match_the_defined_values() -> None:
     assert PITCH_LIMITS_BY_KEY == EXPECTED_PITCH_LIMITS
     assert DEFENSE_ANSWER_LIMIT == 1000
     assert DEFENSE_CHANGE_LIMIT == 1000

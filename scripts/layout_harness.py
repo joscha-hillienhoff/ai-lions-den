@@ -37,7 +37,7 @@ DEMO_DELAY_MS = 2
 # The team view is captured as the very long team name, the hardest case.
 TEAM_VIEW_INDEX = 1
 
-# A representative set: 1920x1080 and 1280x720 are 16:9 classrooms, 1024x768 is
+# A representative set: 1920x1080 and 1280x720 are 16:9 projectors, 1024x768 is
 # the old 4:3 projector, 2560x1440 a large hall display. 125% and 80% browser
 # zoom are modelled as the CSS viewport the same physical screen produces.
 SCREEN_VIEWPORTS: tuple[tuple[int, int, str], ...] = (
@@ -65,7 +65,7 @@ MODERATOR_VIEWPORTS: tuple[tuple[int, int, str], ...] = (
     (1512, 982, "1512x982"),
 )
 
-# The CI run keeps every phase and the smallest and largest agreed viewport for
+# The CI run keeps every phase and the smallest and largest supported viewport for
 # each view. Browser zoom variants remain in the full audit only.
 CI_SESSION_PHASES = (
     "lobby",
@@ -1136,7 +1136,7 @@ def capture_all(
     directory: Path | None = None,
     full_matrix: bool = True,
 ) -> list[Capture]:
-    """Capture every view/phase/viewport combination in the agreed matrix."""
+    """Capture every view/phase/viewport combination in the defined matrix."""
     captures: list[Capture] = []
     team_token = session.teams[TEAM_VIEW_INDEX]["client"].cookies.get("jury_team")
     assert team_token, "seeded team has no session cookie"

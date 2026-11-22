@@ -1,4 +1,4 @@
-"""Layout regressions across every view, phase and agreed viewport.
+"""Layout regressions across every view, phase and supported viewport.
 
 Set ``RUN_LAYOUT_CHECK=1`` after ``npm run build`` and
 ``uv run playwright install chromium`` to run the real app in demo mode and

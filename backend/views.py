@@ -1,7 +1,7 @@
 """API view builders.
 
 These shapes are the contract with the React user interface and must stay
-stable: the UI was built against the previous TypeScript implementation.
+stable.
 """
 
 from __future__ import annotations

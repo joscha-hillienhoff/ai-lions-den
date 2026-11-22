@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture every view and phase at the agreed viewports and report layout issues.
+"""Capture every view and phase at the supported viewports and report layout issues.
 
 Usage:
     npm run build

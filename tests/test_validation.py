@@ -90,7 +90,7 @@ def test_normalises_whitespace_and_rejects_overlong_text() -> None:
         )
 
 
-def test_accepts_classroom_length_assessments_statements_and_questions() -> None:
+def test_accepts_typical_length_assessments_statements_and_questions() -> None:
     assessment = (
         "Your pricing is concrete and the first market is plausible. The onboarding fee "
         "still hides the integration cost, which weakens the margin case."
